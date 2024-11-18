@@ -1,11 +1,11 @@
 ---
 Author: fyz
-Title: assign-3
+Title: assign-5
 ---
 
 # 项目说明
 
-该项目包含两个主要文件夹：`gem5` 和 `gem5_assignment_3`，用于基于 gem5 的计算机系统模拟实验。
+该项目包含两个主要文件夹：`gem5` 和 `gem5_assignment`，用于基于 gem5 的计算机系统模拟实验。
 
 ## 文件夹说明
 
@@ -14,7 +14,7 @@ Title: assign-3
 - 提供模拟器运行所需的核心代码
 - 执行模拟任务时，将调用此文件夹中的 gem5 程序
 
-### `gem5_assignment_3`
+### `gem5_assignment`
 包含用于配置和驱动 gem5 模拟的任务文件，包括以下内容：
 - **`run.py`**：主模拟驱动脚本。用于配置模拟时的计算机参数。用户可通过修改此文件更改模拟配置（例如 CPU、内存等）。
 - **`components`**：包含用于模拟的计算机组件定义文件，例如处理器、内存、缓存等。系统在模拟时会从这些文件中加载相应的组件。
@@ -23,9 +23,9 @@ Title: assign-3
 ## 使用说明
 
 1. 确保 gem5 已编译完成，并确认 `gem5` 文件夹路径正确。
-2. 将 `build/RISCV/gem5.opt` 加入到 `PATH` 环境变量中，以便在 `gem5_assignment_3` 文件夹下直接使用 `gem5.opt` 命令启动模拟。可以通过以下命令实现：
+2. 将 `build/RISCV/gem5.opt` 加入到 `PATH` 环境变量中，以便在 `gem5_assignment` 文件夹下直接使用 `gem5.opt` 命令启动模拟。可以通过以下命令实现：
    export PATH=/home/fyz/gem5/build/RISCV:$PATH
-3. 进入 `gem5_assignment_3` 文件夹。
+3. 进入 `gem5_assignment` 文件夹。
 4. 运行 `run.py` 脚本以启动模拟:
    gem5.opt -r /home/fyz/Documents/gem-assignment-template/gem5_assignment/run.py
    - 可以根据需求在 `run.py` 中修改模拟参数，例如调整 CPU 类型、内存大小等。

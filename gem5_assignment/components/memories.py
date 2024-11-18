@@ -24,14 +24,13 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from m5.objects import DDR3_1600_8x8
-from m5.objects import DDR3_2133_8x8, LPDDR3_1600_1x32
+from m5.objects import DDR4_2400_8x8
 
 from gem5.components.memory.memory import ChanneledMemory
 
 
-# HW0DDR3_1600_8x8 models a 1 GiB single channel DDR3 DRAM memory with a data
-# bus clocked at 1600MHz. This model extends ChanneledMemory from gem5's
+# HW3DDR4 models a 1 GiB dual channel DDR4 DRAM memory with a data
+# bus clocked at 2400MHz. This model extends ChanneledMemory from gem5's
 # standard libary. Please refer to
 #     gem5/src/python/gem5/components/memory/memory.py
 # for documentation on ChanneledMemory.
@@ -48,30 +47,11 @@ from gem5.components.memory.memory import ChanneledMemory
 #     )
 
 
-class HW1DDR3_1600_8x8(ChanneledMemory):
+class HW3DDR4(ChanneledMemory):
     def __init__(self):
         super().__init__(
-            dram_interface_class=DDR3_1600_8x8,
-            num_channels=1,
+            dram_interface_class=DDR4_2400_8x8,
+            num_channels=2,
             interleaving_size=128,
-            size="1GiB",
-        )
-        
-class HW1DDR3_2133_8x8(ChanneledMemory):
-    def __init__(self):
-        super().__init__(
-            dram_interface_class=DDR3_2133_8x8,  # 使用 2133MHz 的 DDR3 接口
-            num_channels=1,
-            interleaving_size=128,
-            size="1GiB",
-        )
-
-
-class HW1LPDDR3_1600_1x32(ChanneledMemory):
-    def __init__(self):
-        super().__init__(
-            dram_interface_class=LPDDR3_1600_1x32,  # 使用 1600MHz 的 LPDDR3 接口
-            num_channels=1,
-            interleaving_size=128,
-            size="1GiB",
+            size="1 GiB",
         )
