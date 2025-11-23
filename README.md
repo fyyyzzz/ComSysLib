@@ -93,5 +93,5 @@ graphrag query --root ./rageng --method local --query "Who is Scrooge, and what 
 graphrag query --root ./rageng --method global --query "What are the top themes in this story?"
 ```
 
-
+查询后，大模型会返回包含数据来源的答案。
 
